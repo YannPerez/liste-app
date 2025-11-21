@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dios-black': '#121212',
-        'dios-orange': '#FF9F1C',
-        'dios-pink': '#FF006E',
-        'dios-cyan': '#00F0FF',
+        'GI-black': '#121212',
+        'GI-orange': '#FF9F1C',
+        'GI-pink': '#FF006E',
+        'GI-cyan': '#00F0FF',
       },
     },
   },

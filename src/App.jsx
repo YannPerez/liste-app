@@ -4,42 +4,42 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // --- DONNÉES ---
 const TEAM_MEMBERS = [
-  { name: "Matteo", role: "El Presidente", totem: "👑", color: "border-dios-orange" },
-  { name: "Léa", role: "VP & Tréso", totem: "💎", color: "border-dios-pink" },
-  { name: "Thomas", role: "Respo Soirée", totem: "🍺", color: "border-dios-cyan" },
-  { name: "Chloé", role: "Respo Com", totem: "📸", color: "border-dios-orange" },
+  { name: "Matteo", role: "El Presidente", totem: "👑", color: "border-GI-orange" },
+  { name: "Léa", role: "VP & Tréso", totem: "💎", color: "border-GI-pink" },
+  { name: "Thomas", role: "Respo Soirée", totem: "🍺", color: "border-GI-cyan" },
+  { name: "Chloé", role: "Respo Com", totem: "📸", color: "border-GI-orange" },
 ];
 
 const EVENTS = [
   { title: "Lancement Campagne", date: "Lun 24", time: "18h", loc: "Foyer" },
   { title: "Petit Dej", date: "Mar 25", time: "08h", loc: "Hall B" },
-  { title: "Soirée DIOS", date: "Jeu 27", time: "23h", loc: "Le Club" },
+  { title: "Soirée GI", date: "Jeu 27", time: "23h", loc: "Le Club" },
 ];
 
 // --- COMPOSANTS ---
 const HomePage = ({ setTab }) => (
   <div className="flex flex-col h-full items-center justify-center px-4 pb-20 relative overflow-hidden pt-10">
     {/* Effets de fond flous */}
-    <div className="absolute top-0 left-0 w-64 h-64 bg-dios-pink opacity-20 blur-[100px] rounded-full"></div>
-    <div className="absolute bottom-0 right-0 w-64 h-64 bg-dios-orange opacity-20 blur-[100px] rounded-full"></div>
+    <div className="absolute top-0 left-0 w-64 h-64 bg-GI-pink opacity-20 blur-[100px] rounded-full"></div>
+    <div className="absolute bottom-0 right-0 w-64 h-64 bg-GI-orange opacity-20 blur-[100px] rounded-full"></div>
 
     <motion.div 
       initial={{ scale: 0.8, opacity: 0 }} 
       animate={{ scale: 1, opacity: 1 }} 
       className="text-center z-10 mb-10"
     >
-      <h1 className="text-7xl font-black text-white drop-shadow-[0_0_20px_rgba(255,159,28,0.6)]">DIOS</h1>
+      <h1 className="text-7xl font-black text-white drop-shadow-[0_0_20px_rgba(255,159,28,0.6)]">GI</h1>
       <div className="flex items-center justify-center gap-2 mt-2">
-        <Skull className="text-dios-cyan" size={20} />
-        <p className="text-dios-pink font-bold tracking-[0.3em] uppercase">Adios les autres</p>
-        <Skull className="text-dios-cyan" size={20} />
+        {/*<Skull className="text-GI-cyan" size={20} />*/}
+        <p className="text-GI-pink font-bold tracking-[0.3em] uppercase">GI les autres</p>
+        {/*<Skull className="text-GI-cyan" size={20} />*/}
       </div>
     </motion.div>
 
     {/* Carte Info */}
     <div className="w-full bg-[#1E1E1E]/80 backdrop-blur border border-gray-800 p-6 rounded-2xl shadow-xl relative z-10">
-      <div className="absolute -top-3 right-4 bg-dios-cyan text-black font-bold px-3 py-1 rounded-full text-xs animate-bounce">INFO DU JOUR</div>
-      <h3 className="text-dios-orange font-bold text-xl mb-2">💀 Hola la mif !</h3>
+      <div className="absolute -top-3 right-4 bg-GI-cyan text-black font-bold px-3 py-1 rounded-full text-xs animate-bounce">INFO DU JOUR</div>
+      <h3 className="text-GI-orange font-bold text-xl mb-2">GI !</h3>
       <p className="text-gray-300 leading-relaxed">
         La campagne commence fort ! <br/>
         <span className="text-white font-bold">Rendez-vous au stand pour les shots offerts.</span>
@@ -50,7 +50,7 @@ const HomePage = ({ setTab }) => (
     <motion.button 
       whileTap={{ scale: 0.95 }} 
       onClick={() => setTab('sos')}
-      className="w-full mt-8 bg-gradient-to-r from-dios-orange to-orange-600 text-black font-black text-xl py-5 rounded-full shadow-[0_0_30px_rgba(255,159,28,0.4)] flex items-center justify-center gap-3 z-10 border-2 border-white/10"
+      className="w-full mt-8 bg-gradient-to-r from-GI-orange to-orange-600 text-black font-black text-xl py-5 rounded-full shadow-[0_0_30px_rgba(255,159,28,0.4)] flex items-center justify-center gap-3 z-10 border-2 border-white/10"
     >
       <Siren size={28} className="animate-pulse" /> SOS
     </motion.button>
@@ -59,7 +59,7 @@ const HomePage = ({ setTab }) => (
 
 const TeamPage = () => (
   <div className="px-4 py-6 pb-24">
-    <h2 className="text-3xl font-bold text-white mb-6"><span className="text-dios-cyan">La</span> Familia</h2>
+    <h2 className="text-3xl font-bold text-white mb-6"><span className="text-GI-cyan">La</span> Familia</h2>
     <div className="grid grid-cols-2 gap-4">
       {TEAM_MEMBERS.map((m, i) => (
         <motion.div 
@@ -81,10 +81,10 @@ const TeamPage = () => (
 const OfrendaPage = () => (
   <div className="px-4 py-6 pb-24 space-y-8">
     <section>
-      <h2 className="text-3xl font-bold text-white mb-4 flex gap-2"><Calendar className="text-dios-orange"/> Agenda</h2>
+      <h2 className="text-3xl font-bold text-white mb-4 flex gap-2"><Calendar className="text-GI-orange"/> Agenda</h2>
       <div className="space-y-4">
         {EVENTS.map((e, i) => (
-          <div key={i} className="bg-[#1E1E1E] p-4 rounded-lg border-l-4 border-dios-pink flex justify-between items-center shadow-lg">
+          <div key={i} className="bg-[#1E1E1E] p-4 rounded-lg border-l-4 border-GI-pink flex justify-between items-center shadow-lg">
             <div>
               <h4 className="font-bold text-lg text-white">{e.title}</h4>
               <p className="text-gray-400 text-sm">{e.date} • {e.time} • {e.loc}</p>
@@ -94,7 +94,7 @@ const OfrendaPage = () => (
       </div>
     </section>
     <section>
-      <h2 className="text-3xl font-bold text-white mb-4 flex gap-2"><PlayCircle className="text-dios-cyan"/> Vidéos</h2>
+      <h2 className="text-3xl font-bold text-white mb-4 flex gap-2"><PlayCircle className="text-GI-cyan"/> Vidéos</h2>
       <div className="bg-black aspect-video rounded-xl border border-gray-800 flex items-center justify-center relative">
         <p className="text-gray-500">Teaser Coming Soon...</p>
       </div>
@@ -104,7 +104,7 @@ const OfrendaPage = () => (
 
 const SosPage = () => (
   <div className="px-4 py-6 flex flex-col items-center pb-24">
-    <Siren size={64} className="text-dios-orange mb-4 animate-pulse mt-4" />
+    <Siren size={64} className="text-GI-orange mb-4 animate-pulse mt-4" />
     <h2 className="text-3xl font-bold text-white mb-2">Zone SOS</h2>
     <p className="text-gray-400 mb-6">Une galère ? On arrive.</p>
     
@@ -132,7 +132,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-dios-black text-white font-sans selection:bg-dios-orange selection:text-black">
+    <div className="min-h-screen w-full bg-GI-black text-white font-sans selection:bg-GI-orange selection:text-black">
       <AnimatePresence mode="wait">
         <motion.div 
           key={tab} 
@@ -147,9 +147,9 @@ export default function App() {
       </AnimatePresence>
 
       <nav className="fixed bottom-0 w-full bg-[#121212]/95 backdrop-blur border-t border-gray-800 h-20 flex justify-around items-center z-50 pb-safe">
-        <NavIcon I={Home} l="Hola" a={tab==='home'} c="text-dios-orange" onClick={() => setTab('home')} />
-        <NavIcon I={Users} l="Familia" a={tab==='team'} c="text-dios-pink" onClick={() => setTab('team')} />
-        <NavIcon I={Tv} l="Ofrenda" a={tab==='ofrenda'} c="text-dios-cyan" onClick={() => setTab('ofrenda')} />
+        <NavIcon I={Home} l="GI" a={tab==='home'} c="text-GI-orange" onClick={() => setTab('home')} />
+        <NavIcon I={Users} l="GI fam" a={tab==='team'} c="text-GI-pink" onClick={() => setTab('team')} />
+        <NavIcon I={Tv} l="GI vids" a={tab==='ofrenda'} c="text-GI-cyan" onClick={() => setTab('ofrenda')} />
         <NavIcon I={Siren} l="SOS" a={tab==='sos'} c="text-orange-500" onClick={() => setTab('sos')} />
       </nav>
     </div>
